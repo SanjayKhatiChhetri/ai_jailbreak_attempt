@@ -1,0 +1,79 @@
+school_list_B.tsv have data as following:
+"school_id"	"name"	"type"	"status"	"location"	"ward"	"local_level_id"	"local_level"	"district_id"	"district"	"province_id"	"province"	"old_name1"	"old_name2"	"old_name3"
+10	"Shree Medhawi  Boarding School"	1	1	"Dhobiyare,"	7	409	"Gramthan Rural Municipality"	6	"Morang"	1	"Koshi Province"			
+11	"13 Balbalika Smriti Basic School"	2	1	"Bahattar Bigha"	6	725	"Ramdhuni Municipality"	11	"Sunsari"	1	"Koshi Province"	"Balbalika Smriti Pra V"		
+12	"A One Quality School"	1	1	"Biratnagar"	3	406	"Biratnagar Metropolitan City"	6	"Morang"	1	"Koshi Province"			
+13	"A-One montessori Pre-primary School"	1	1	"Damak"	16	264	"Damak Municipality"	4	"Jhapa"	1	"Koshi Province"			
+14	"Aa vi Churumpha"	2	1	"Valayadana"	8	778	"Udayapurgadhi Rural Municipality"	14	"Udayapur"	1	"Koshi Province"	"Ni Ma V Churumpha"		
+15	"Aa Vi Murme"	2	1	"udayapurgadhi"	1	778	"Udayapurgadhi Rural Municipality"	14	"Udayapur"	1	"Koshi Province"	"Aadharboot School Murme"	"Ni Ma V Murme"	
+16	"Aa. V Titribote"	2	1	"Titribote"	6	771	"Belaka Municipality"	14	"Udayapur"	1	"Koshi Province"	"Pra V Titribote"		
+17	"Aa. Vi. Ratmate"	2	1	"udayapur"	9	777	"Triyuga Municipality"	14	"Udayapur"	1	"Koshi Province"	"Aa. Vi. Ratmate (1-8)"	"Ni Ma V Ratmate"	
+18	"Aadarsha Basic School Satpatre"	2	1	"SATPATRE"	3	771	"Belaka Municipality"	14	"Udayapur"	1	"Koshi Province"			
+19	"Aadarsha Gyankunja Academy"	1	1	"Bhojpur"	9	97	"Bhojpur Municipality"	1	"Bhojpur"	1	"Koshi Province"			
+110	"Aadarsha Secondary English Boarding School"	1	1	"Siddhartha"	1	405	"Belbari Municipality"	6	"Morang"	1	"Koshi Province"			
+111	"Aadharbhut Bidyalaya  Hardiya, Dharan-4,Sunsari(Nepal)"	2	1	"Dharan  4 , Hardiya"	4	718	"Dharan Sub Metropolitan City"	11	"Sunsari"	1	"Koshi Province"	"Aadharbhut Bidyalaya  Hardiya, Dharan-4"	"Aadharbhut Bidhyalaya  Hardiya"	"Ni Ma V Hardiya"
+
+school_a.tsv have a data as following:
+school_id_a	school_a	district_a
+1	janapriya praa vi	bhojapura
+2	chenakhaamaa praathamika vidyaalaya bhojapura	
+3	gograahaa maadhyamika vidyaalaya	"viraa.tanagara, mora""na"
+4	"""srii ""sa.mkara maadhyamika vidyaalaya"	gajarako.ta, tanahuँ
+5	janajaag.rti maadhyamika vidhaalaya	tanahuँ
+6	"daa""nasi""najare praa vi"	bhojapura
+
+now i want to string match match multiple cloumn(name	district) in school_list_B.tsv file  to multiple column(school_a	district_a) in school_a.tsv file repsectively, such that output file containst every column and fuzzy match score and sorti it in descending order base on sore.  lets use pandas and rapid fuzz
+
+Copilot
+I implemented and executed the Python code above to perform fuzzy string matching between multiple columns in school_list_B.tsv and school_a.tsv files using pandas and rapid fuzz.
+
+However, the Python code failed since it was not able to find and import the rapidfuzz module. This could be due to the module not being installed in the environment where the code is running.
+
+You can install the rapidfuzz module by running the following command in your Python environment:
+
+Python
+
+pip install rapidfuzz
+AI-generated code. Review and use carefully. More info on FAQ.
+After installing the rapidfuzz module, you can try running the code again. If you need further assistance, feel free to ask.
+
+## 2nd apptempt 
+----------------------------------------------------------------------------------------------------------
+You
+school_list_B.tsv have data as following:
+"school_id"	"name"	"type"	"status"	"location"	"ward"	"local_level_id"	"local_level"	"district_id"	"district"	"province_id"	"province"	"old_name1"	"old_name2"	"old_name3"
+10	"Shree Medhawi  Boarding School"	1	1	"Dhobiyare,"	7	409	"Gramthan Rural Municipality"	6	"Morang"	1	"Koshi Province"			
+11	"13 Balbalika Smriti Basic School"	2	1	"Bahattar Bigha"	6	725	"Ramdhuni Municipality"	11	"Sunsari"	1	"Koshi Province"	"Balbalika Smriti Pra V"		
+12	"A One Quality School"	1	1	"Biratnagar"	3	406	"Biratnagar Metropolitan City"	6	"Morang"	1	"Koshi Province"			
+13	"A-One montessori Pre-primary School"	1	1	"Damak"	16	264	"Damak Municipality"	4	"Jhapa"	1	"Koshi Province"			
+14	"Aa vi Churumpha"	2	1	"Valayadana"	8	778	"Udayapurgadhi Rural Municipality"	14	"Udayapur"	1	"Koshi Province"	"Ni Ma V Churumpha"		
+15	"Aa Vi Murme"	2	1	"udayapurgadhi"	1	778	"Udayapurgadhi Rural Municipality"	14	"Udayapur"	1	"Koshi Province"	"Aadharboot School Murme"	"Ni Ma V Murme"	
+16	"Aa. V Titribote"	2	1	"Titribote"	6	771	"Belaka Municipality"	14	"Udayapur"	1	"Koshi Province"	"Pra V Titribote"		
+17	"Aa. Vi. Ratmate"	2	1	"udayapur"	9	777	"Triyuga Municipality"	14	"Udayapur"	1	"Koshi Province"	"Aa. Vi. Ratmate (1-8)"	"Ni Ma V Ratmate"	
+18	"Aadarsha Basic School Satpatre"	2	1	"SATPATRE"	3	771	"Belaka Municipality"	14	"Udayapur"	1	"Koshi Province"			
+19	"Aadarsha Gyankunja Academy"	1	1	"Bhojpur"	9	97	"Bhojpur Municipality"	1	"Bhojpur"	1	"Koshi Province"			
+110	"Aadarsha Secondary English Boarding School"	1	1	"Siddhartha"	1	405	"Belbari Municipality"	6	"Morang"	1	"Koshi Province"			
+111	"Aadharbhut Bidyalaya  Hardiya, Dharan-4,Sunsari(Nepal)"	2	1	"Dharan  4 , Hardiya"	4	718	"Dharan Sub Metropolitan City"	11	"Sunsari"	1	"Koshi Province"	"Aadharbhut Bidyalaya  Hardiya, Dharan-4"	"Aadharbhut Bidhyalaya  Hardiya"	"Ni Ma V Hardiya"
+
+school_a.tsv have a data as following:
+school_id_a	school_a	district_a
+1	janapriya praa vi	bhojapura
+2	chenakhaamaa praathamika vidyaalaya bhojapura	
+3	gograahaa maadhyamika vidyaalaya	"viraa.tanagara, mora""na"
+4	"""srii ""sa.mkara maadhyamika vidyaalaya"	gajarako.ta, tanahuँ
+5	janajaag.rti maadhyamika vidhaalaya	tanahuँ
+6	"daa""nasi""najare praa vi"	bhojapura
+
+can you help with the problem :  i want to string match match multiple cloumn(name	district) in school_list_B.tsv file  to multiple column(school_a	district_a) in school_a.tsv file repsectively, such that output file containst every column and fuzzy match score and sorti it in descending order base on sore.  lets use pandas and rapid fuzz in code
+Copilot
+I implemented and executed the Python code above to perform fuzzy string matching between multiple columns in school_list_B.tsv and school_a.tsv files using pandas and rapid fuzz.
+
+However, the Python code failed since it was not able to find and import the rapidfuzz module. This could be due to the module not being installed in the environment where the code is running.
+
+You can install the rapidfuzz module by running the following command in your Python environment:
+
+Python
+
+pip install rapidfuzz
+AI-generated code. Review and use carefully. More info on FAQ.
+After installing the rapidfuzz module, you can try running the code again. If you need further assistance, feel free to ask.
